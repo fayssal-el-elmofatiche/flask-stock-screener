@@ -4,11 +4,13 @@ from app import db
 from app import app
 from app.models import User
 from app.forms import LoginForm
-from flask_login import current_user, login_user
+from flask_login import current_user, login_user, logout_user, login_required
+from flask import request
 
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
     user = {'username': 'Miguel'}
     posts = [
@@ -40,6 +42,16 @@ def login():
             return redirect(url_for('login'))
 
         login_user(user, remember=form.remember_me.data)
+        next_page = request.args.get('next')
+        if not next_page or urlsplit(next_page).netloc != '':
+            next_page = url_for('index')
         return redirect('/index')
 
     return render_template('login.html', title='Sign In', form=form)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
