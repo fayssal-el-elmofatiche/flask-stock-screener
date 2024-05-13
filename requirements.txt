@@ -1,0 +1,8 @@
+WTForms~=3.1.2
+SQLAlchemy~=1.4.28
+Werkzeug~=2.0.2
+Flask~=2.0.2
+alembic~=1.13.1
+flask-migrate
+flask-wtf
+flask-login
