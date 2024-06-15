@@ -20,3 +20,11 @@ $ poetry install
 ```
 $ flask run
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+
+# Hightlighted libraries used
+- Flask
+- Flask-SQLAlchemy
+- Flask-Migrate
+- Flask-WTF (you read that right!)
+- WTForms
