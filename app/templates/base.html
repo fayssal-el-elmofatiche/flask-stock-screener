@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Stock Screener</title>
+      {% else %}
+      <title>Welcome to Stock Screener</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Stock Screener: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

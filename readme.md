@@ -1,6 +1,6 @@
 # Flask Stock Screener
 
-A simple stock screener for Flask. It's a work in progress. This is based on the Mega Flask tutorial from [Flask Mega Tutorial](https://github.com/miguelgrinberg/mega-flask-tutorial).
+A simple stock screener built with Flask. It's a work in progress. This is based on the Mega Flask tutorial from [Flask Mega Tutorial](https://github.com/miguelgrinberg/mega-flask-tutorial).
 
 ## Installation
 

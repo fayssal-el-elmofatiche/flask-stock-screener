@@ -1,5 +1,7 @@
+from flask import render_template
 from app import app
 from app.users import users
+
 
 @app.route('/')
 @app.route('/index')
@@ -7,20 +9,18 @@ def index():
     # select a random user
     user = users[0]
 
-    return '''
-        <html>
-            <head>
-                <title>Stock Screener</title>
-            </head>
-            <body>
-                <h1>Stock Screener</h1>
-                <p>Welcome, {username}, to the Stock Screener!</p>
-                <ul>
-                    <li><a href="/stocks">Stocks</a></li>
-                </ul>
-            </body>
-        </html>
-    '''.format(username=user['username'])
+    posts = [
+        {
+            'title': 'Hello, World!',
+            'body': 'This is a test post.'
+        },
+        {
+            'title': 'How to train your dragon',
+            'body': 'Ever wanted to be a hero? Now you can!'
+        }
+    ]
+
+    return render_template('index.html', title='Home', user=user, posts=posts)
 
 @app.route('/stocks')
 def stocks():
