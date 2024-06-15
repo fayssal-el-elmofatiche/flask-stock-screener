@@ -1,0 +1,67 @@
+from app import app
+from app.users import users
+
+@app.route('/')
+@app.route('/index')
+def index():
+    # select a random user
+    user = users[0]
+
+    return '''
+        <html>
+            <head>
+                <title>Stock Screener</title>
+            </head>
+            <body>
+                <h1>Stock Screener</h1>
+                <p>Welcome, {username}, to the Stock Screener!</p>
+                <ul>
+                    <li><a href="/stocks">Stocks</a></li>
+                </ul>
+            </body>
+        </html>
+    '''.format(username=user['username'])
+
+@app.route('/stocks')
+def stocks():
+    return "Stocks"
+
+@app.route('/stocks/<ticker>')
+def stock(ticker):
+    return f"Stock {ticker}"
+
+@app.route('/stocks/<ticker>/history')
+def stock_history(ticker):
+    return f"Stock {ticker} history"
+
+@app.route('/stocks/<ticker>/history/<date>')
+def stock_history_date(ticker, date):
+    return f"Stock {ticker} history for {date}"
+
+@app.route('/stocks/<ticker>/history/<date>/<time>')
+def stock_history_time(ticker, date, time):
+    return f"Stock {ticker} history for {date} at {time}"
+
+@app.route('/stocks/<ticker>/news')
+def stock_news(ticker):
+    return f"Stock {ticker} news"
+
+@app.route('/stocks/<ticker>/news/<date>')
+def stock_news_date(ticker, date):
+    return f"Stock {ticker} news for {date}"
+
+@app.route('/stocks/<ticker>/news/<date>/<time>')
+def stock_news_time(ticker, date, time):
+    return f"Stock {ticker} news for {date} at {time}"  
+
+@app.route('/stocks/<ticker>/quotes')
+def stock_quotes(ticker):
+    return f"Stock {ticker} quotes"
+
+@app.route('/stocks/<ticker>/quotes/<date>')
+def stock_quotes_date(ticker, date):
+    return f"Stock {ticker} quotes for {date}"
+
+@app.route('/stocks/<ticker>/quotes/<date>/<time>')
+def stock_quotes_time(ticker, date, time):
+    return f"Stock {ticker} quotes for {date} at {time}"

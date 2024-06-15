@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "stockscreener"
+version = "0.1.0"
+description = "Flask-based stock screener"
+authors = ["fayssal el mofatiche <fayssal.elmofatiche@dnbf.tech>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.3"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
