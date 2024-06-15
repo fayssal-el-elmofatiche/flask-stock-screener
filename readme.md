@@ -2,6 +2,11 @@
 
 A simple stock screener built with Flask. It's a work in progress. This is based on the Mega Flask tutorial from [Flask Mega Tutorial](https://github.com/miguelgrinberg/mega-flask-tutorial).
 
+## Differences from the tutorial
+
+- The stock screener adapts the tutorial from microblogging to stock screening.
+- Instead of pip, we use poetry to manage dependencies.
+
 ## Installation
 
 ```
