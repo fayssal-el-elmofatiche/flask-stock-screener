@@ -28,3 +28,8 @@ $ flask run
 - Flask-Migrate
 - Flask-WTF (you read that right!)
 - WTForms
+
+
+# Useful tools used in this project
+- [WWW SQL Designer](https://sql.toad.cz/)
+- [DB Visualizer](https://dbvis.com/)
