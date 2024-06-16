@@ -9,7 +9,7 @@ class User(db.Model):
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True, unique=True, nullable=False)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
 
-    stocks: so.WriteOnlyMapped['StockScreener.stock'] = so.relationship(back_populates='screener')
+    stocks: so.WriteOnlyMapped['StockScreener'] = so.relationship(secondary='stock_screener', back_populates='screener')
 
     def __repr__(self):
         return f"<User('{self.username}')>"
@@ -19,7 +19,7 @@ class Stock(db.Model):
     symbol: so.Mapped[str] = so.mapped_column(sa.String(10), index=True, unique=True, nullable=False)
     name: so.Mapped[str] = so.mapped_column(sa.String(100), index=True, nullable=False)
 
-    screeners: so.WriteOnlyMapped['StockScreener.screener'] = so.relationship(back_populates='stock')
+    screeners: so.WriteOnlyMapped['StockScreener'] = so.relationship(secondary='stock_screener', back_populates='stock')
 
     def __repr__(self):
         return f"<Stock('{self.symbol}')>"
