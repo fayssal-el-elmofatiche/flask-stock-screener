@@ -9,7 +9,7 @@ from app import db, login
 def load_user(user_id):
     return db.session.get(User, user_id)
 
-class User(db.Model, db.Model):
+class User(UserMixin, db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
     username: so.Mapped[str] = so.mapped_column(sa.String(80), index=True, unique=True, nullable=False)
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True, unique=True, nullable=False)
