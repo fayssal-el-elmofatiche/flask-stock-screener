@@ -23,11 +23,12 @@ $ flask run
 
 
 # Hightlighted libraries used
-- Flask
-- Flask-SQLAlchemy
-- Flask-Migrate
-- Flask-WTF (you read that right!)
-- WTForms
+- Flask - For web framework
+- Flask-SQLAlchemy - For database access
+- Flask-Migrate - For database migrations
+- Flask-WTF (you read that right!) - For forms
+- Werkzeug - For password hashing
+- Flask-Login - For user authentication
 
 
 # Useful tools used in this project
