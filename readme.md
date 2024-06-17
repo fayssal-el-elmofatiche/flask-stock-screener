@@ -29,6 +29,7 @@ $ flask run
 - Flask-WTF (you read that right!) - For forms
 - Werkzeug - For password hashing
 - Flask-Login - For user authentication
+- Email-validator - For email validation
 
 
 # Useful tools used in this project
